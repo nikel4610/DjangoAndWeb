@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .backslash {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="100%" y2="100%" stroke="black" /></svg>');
+        }
+    </style>
+  </head>
+  <body>
+    <h3>성적표</h3>
+    <table>
+      <tr>
+        <th>수험번호</th>
+        <th colspan="2">성 명</th>
+        <th>생년월일</th>
+        <th>성별</th>
+        <th colspan="3">출신고교(반 또는 졸업연도)</th>
+      </tr>
+        <td>12345678</td>
+        <td colspan="2">홍길동</td>
+        <td>00.09.05</td>
+        <td>남</td>
+        <td colspan="3">한국고등학교 (9)</td>
+      <tr>
+        <th rowspan="2">구 분</th>
+        <td rowspan="2">한국사<br />영역</td>
+        <td rowspan="2">국어<br />영역</td>
+        <td>수학<br />영역</td>
+        <td rowspan="2">영어<br />영역</td>
+        <td colspan="2">사회탐구 영역</td>
+        <td>제2외국어<br />/한문 영역</td>
+      </tr>
+      <tr>
+        <td>나 형</td>
+        <td>생활과<br />윤리</td>
+        <td>사회 문화</td>
+        <td>일본어 1</td>
+      </tr>
+        <th>표준점수</th>
+        <td class="backslash" rowspan="2"></td>
+        <td>131</td>
+        <td>137</td>
+        <td class="backslash" rowspan="2"></td>
+        <td>53</td>
+        <td>64</td>
+        <td>69</td>
+      </tr>
+        <th>백분위</th>
+        <td>93</td>
+        <td>96</td>
+        <td>75</td>
+        <td>93</td>
+        <td>95</td>
+      </tr>
+        <th>등급</th>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>1</td>
+        <td>4</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    </table>
+  </body>
+</html>
