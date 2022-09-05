@@ -1,18 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      h2 {
+        color: rgb(206, 203, 203);
+      }
+      input:hover {
+        background-color: rgb(206, 206, 206);
+      }
+      input {
+        background-color: rgb(243, 243, 243);
+        width: 300px;
+        height: 50px;
+        border: none;
+      }
+      button {
+        background-color: rgb(105, 102, 240);
+        width: 250px;
+        height: 50px;
+      }
+      button:hover {
+        background-color: rgb(188, 187, 255);
+      }
+      ::placeholder {
+        color: rgb(15, 15, 15);
+        text-align: center;
+      }
+      button {
+        margin-bottom: 30px;
+        box-shadow: 0 0 10px 0 rgb(161, 151, 218);
+        border: none;
+      }
+      fieldset {
+        border: none;
+        box-shadow: 0 0 10px 0 rgb(150, 150, 150);
+        width: 500px;
+        height: 400px;
+      }
+    </style>
   </head>
   <body>
-    <h2>로그인</h2>
-    <form action="./login" method="post">
-      <input type="id" placeholder="아이디" />
-      <input type="password" placeholder="비밀번호" />
-      <button>로그인</button>
-      <a href="./0905_박현우parc.html">회원가입</a>
-    </form>
+    <fieldset>
+    <div align="center">
+      <h2>로그인</h2>
+      <form action="./login" method="post">
+        <input type="id" style="margin-bottom: 7px" placeholder="아이디" />
+        <br />
+        <input
+          type="password"
+          style="margin-bottom: 7px"
+          placeholder="비밀번호"
+        />
+        <br />
+        <button style="color: white">로그인</button> <br />
+        <a href="./0905_박현우parc.html" style="color: blue">회원가입</a>
+      </form>
+    </fieldset>
+    </div>
   </body>
 </html>
