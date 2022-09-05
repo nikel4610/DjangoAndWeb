@@ -11,9 +11,49 @@
     <!-- ul은 순서가 없는 리스트 -->
     <ul>
       <li><a href="../">상위 경로 이동</a></li>
-      <li>리스트2</li>
-      <li>리스트3</li>
+      <li>
+        <input type="email" placeholder="이메일을 입력하세요" />
+      </li>
+      <li>
+        Select 태그
+        <select name="select" id="select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </li>
+      <li>
+        textarea 태그
+        <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+      </li>
+      <li>
+        radio 태그
+        <radio>
+          <input type="radio" name="radio" id="radio" value="1" />
+          <label for="radio">1</label>
+          <input type="radio" name="radio" id="radio" value="2" />
+          <label for="radio">2</label>
+          <input type="radio" name="radio" id="radio" value="3" />
+          <label for="radio">3</label>
+        </radio>
+      </li>
+      <li>
+        checkbox 태그
+        <checkbox>
+          <input type="checkbox" name="checkbox" id="checkbox" value="1" />
+          <label for="checkbox">1</label>
+          <input type="checkbox" name="checkbox" id="checkbox" value="2" />
+          <label for="checkbox">2</label>
+          <input type="checkbox" name="checkbox" id="checkbox" value="3" />
+          <label for="checkbox">3</label>
+        </checkbox>
+      </li>
+      <li>
+        range 입력 태그
+        <input type="range" name="range" id="range" min="0" max="100" />
+      </li>
     </ul>
+
     <h3>홈페이지 리스트ol</h3>
     <!-- ol은 순서가 있는 리스트 -->
     <ol>
@@ -25,6 +65,9 @@
           >_blank target 네이버</a
         >
         <!-- target="_blank"는 새창으로 열기 -->
+      </li>
+      <li>
+        <input type="text" placeholder="검색어를 입력하세요" value="" />
       </li>
       <li>
         <a href="https://www.naver.com" target="_self">self target 네이버</a>
