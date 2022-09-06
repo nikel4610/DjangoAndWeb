@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+        padding: 10px;
+      } */
+      .side {
+        float: left;
+      }
+      #side_a {
+        width: 600px;
+        height: 50vh;
+        background-color: blue;
+      }
+      #side_b {
+        width: 300px;
+        height: 50vh;
+        background-color: green;
+      }
+      /* #a {
+        float: left;
+      }
+      #b {
+        float: right;
+      } */
+      /* body {
+        overflow: hidden;
+      } */
+      /* 수평 정렬 overflow: hidden; 또는 앞 뒤로 clear: both; */
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <span id="a" class="box">1번째입니다</span>
+    <span id="b" class="box">2번째입니다</span>
+    <p>아무런 의미없는 문장입니다.</p>
+    <p>이것 또한 아무런 의미가 없습니다.</p> -->
+    <div>
+      <div class="clear"></div>
+      <div id="side_a" class="side"></div>
+      <div id="side_b" class="side"></div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

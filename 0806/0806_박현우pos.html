@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      .box:first-child {
+        background-color: red;
+        top: 10px;
+        left: 10px;
+        z-index: 3;
+      }
+      .box:nth-child(2) {
+        background-color: green;
+        top: 50px;
+        left: 50px;
+        z-index: 2;
+      }
+      .box:nth-child(3) {
+        background-color: blue;
+        top: 90px;
+        left: 90px;
+        z-index: 1;
+      }
+      body > div {
+        width: 400px;
+        height: 100px;
+        border: 3px solid black;
+        position: relative;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>아아아아아아아아아아아아아</h1>
+    <!-- absolute를 적용하려면 충분한 높이와 relative 속성이 필요함 -->
+    <div>
+      <!-- absolute -->
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <h1>이이이이이이이이이이이이이</h1>
+  </body>
+</html>
