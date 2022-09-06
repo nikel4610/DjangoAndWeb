@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #bigContainer {
+        background-color: rgb(137, 24, 100);
+        font-size: 30px;
+      }
+      #smallContainer {
+        background-color: rgba(137, 24, 100, 0.5);
+        font-size: 15px;
+      }
+      .percent {
+        /* percent 는 상대적 크기 */
+        font-size: 50%;
+      }
+      .em {
+        /* 2배 */
+        font-size: 2em;
+      }
+      .rem {
+        /* 루트 1배 */
+        font-size: 1rem;
+      }
+      .vh {
+        /* 보이는 높이에 따라 글씨 크기 달라짐 */
+        font-size: 10vh;
+      }
+      .vw {
+        /* 보이는 너비에 따라 글씨 크기 달라짐 */
+        font-size: 10vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bigContainer">
+      30px
+      <div class="percent">30px의 50%</div>
+      <div class="em">30px의 2em</div>
+      <div class="rem">16px의 1rem</div>
+      <div class="vh">10vh</div>
+      <div class="vw">10vw</div>
+    </div>
+    <hr />
+    <div id="smallContainer">
+      15px
+        <div class="percent">15px의 50%</div>
+        <div class="em">15px의 2em</div>
+        <div class="rem">16px의 1rem</div>
+        <div class="vh">10vh</div>
+        <div class="vw">10vw</div>
+      </div>
+    </div>
+  </body>
+</html>
