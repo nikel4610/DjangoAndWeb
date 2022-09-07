@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   let makeStar = () => {
+      //     for (let i = 1; i <= 5; i++) {
+      //       let star = "";
+      //       for (let j = 1; j <= i; j++) {
+      //         star += "*";
+      //       }
+      //       console.log(star);
+      //     }
+      //   };
+      //   makeStar();
+
+      let makeObject = (name, age) => {
+        return {
+          name,
+          age,
+          team: "BTS",
+        };
+      };
+
+      let Jin = makeObject("김석진", 28);
+      let Jungkook = makeObject("진정국", 24);
+      let Jimin = makeObject("박지민", 26);
+      let V = makeObject("김태형", 25);
+      let rm = makeObject("김남준", 27);
+      let sugar = makeObject("민윤기", 28);
+      let jHope = makeObject("정호석", 27);
+
+      let members = {
+        name: "김석진",
+        age: 28,
+        sayHi: function (name) {
+          console.log(`${members.name}: 안녕하세요 팬 여러분~ ${name}입니다.`);
+        },
+      };
+
+      members.sayHi("Jin");
+    </script>
+  </head>
+  <body></body>
+</html>
