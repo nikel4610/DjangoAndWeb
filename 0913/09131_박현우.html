@@ -5,24 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-      window.onload = function () {
-        let title = document.querySelector("#title");
-        title.style.color = "red";
-        title.style.border = "1px solid black";
-        title.innerText = "중요한 제목";
+      $(function () {
+        $("#title")
+          .css("color", "red")
+          .css("border", "1px solid black")
+          .text("중요한 제목");
 
-        let contentArr = document.querySelectorAll("p");
-        for (let i = 0; i < contentArr.length; i++) {
-          let content = contentArr[i];
-          content.innerHTML = `내용이 입력됩니다 ${i}.`;
-        }
-
-        let importantArr = document.querySelectorAll(".important");
-        for (let element of importantArr) {
-          element.style.fontSize = "2em";
-        }
-      };
+        $(".important")
+          .css("color", "blue")
+          .css("border", "1px solid black")
+          .text("중요한 내용");
+      });
     </script>
   </head>
   <body>
