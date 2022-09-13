@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-      window.onload = function () {
-        let memberNameArr = ["김밥", "떡볶이", "튀김", "순대", "라면"];
+      $(function () {
+        let memberNameArr = ["라면", "김치", "떡볶이", "순대", "김밥"];
         let output = "<h1></h1>";
 
         for (let mem of memberNameArr) {
           output += `<p>${mem}</p>`;
-        }
 
-        document.body.innerHTML = output;
-        document.querySelector("h1").textContent = "음식 리스트";
-      };
+          $("body").html(output);
+        }
+      });
     </script>
   </head>
   <body></body>

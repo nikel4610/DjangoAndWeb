@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#jumin_front").keydown(function (e) {
+          if (6 <= $("#jumin_front").val().length) {
+            $("#jumin_back").focus();
+          }
+        });
+
+        $("#jumin_back").keydown(function (e) {
+          if (1 == $("#jumin_back").val().length) {
+            if($('#jumin_back').val() % 2){
+              console.log('남성');
+              $('#male').attr('checked', true); 
+            } else {
+              console.log('여성');
+              $('#female').attr('checked', true);
+            }
+          }
+        });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div id="jumin_number">
+      <input type="text" name="jumin_front" id="jumin_front" maxlength="6" />
+      -
+      <input type="text" name="jumin_back" id="jumin_back" maxlength="7" />
+    </div>
+    <div id="gender">
+      <input type="radio" name="gender" id="male" value="m">남성</input>
+      <input type="radio" name="gender" id="female" value="f">여성</input>
+    </div>
+  </body>
+</html>

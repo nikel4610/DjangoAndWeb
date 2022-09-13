@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 300px;
+        background-color: red;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script></script>
+    <script>
+      $(function () {
+        $("#s").click(function () {
+          $("div").show();
+        });
+        $("#h").click(function () {
+          $("div").hide();
+        });
+        $("#t").click(function () {
+          $("div").toggle();
+        });
+        $("#fI").click(function () {
+          $("div").fadeIn();
+        });
+        $("#fO").click(function () {
+          $("div").fadeOut();
+        });
+        $("#fT").click(function () {
+          $("div").fadeToggle();
+        });
+        $("#sD").click(function () {
+          $("div").slideDown();
+        });
+        $("#sU").click(function () {
+          $("div").slideUp();
+        });
+        $("#sT").click(function () {
+          $("div").slideToggle();
+        });
+      });
+    </script>
   </head>
-  <body></body>
+  <body>
+    <button id="s">show</button>
+    <button id="h">hide</button>
+    <button id="t">toggle</button>
+    <br />
+    <button id="sD">slideDown</button>
+    <button id="sU">slideUp</button>
+    <button id="sT">slideToggle</button>
+    <br />
+    <button id="fI">fadeIn</button>
+    <button id="fO">fadeOut</button>
+    <button id="fT">fadeToggle</button>
+    <br />
+    <div>
+      <div class="box"></div>
+    </div>
+  </body>
 </html>
