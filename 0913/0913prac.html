@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let memberNameArr = ["김밥", "떡볶이", "튀김", "순대", "라면"];
+        let output = "<h1></h1>";
+
+        for (let mem of memberNameArr) {
+          output += `<p>${mem}</p>`;
+        }
+
+        document.body.innerHTML = output;
+        document.querySelector("h1").textContent = "음식 리스트";
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
