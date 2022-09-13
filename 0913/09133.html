@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+      $(document).ready(function () {
+        $("body").keydown(function (e) {
+          let key = e.keyCode;
+          console.log(key);
+          if (key == 49) {
+            $("<h1>prependTo</h1>").prependTo("#mark");
+          } else if (key == 50) {
+            $("#mark").prepend("<h1>prepend</h1>");
+          } else if (key == 51) {
+            $("<h1>appendTo</h1>").appendTo("#mark");
+          } else if (key == 52) {
+            $("#mark").append("<h1>append</h1>");
+          } else if (key == 53) {
+            $("<h1>insertBefore</h1>").insertBefore("#mark");
+          } else if (key == 54) {
+            $("#mark").before("<p>before</p>");
+          } else if (key == 55) {
+            $("<h1>insertAfter</h1>").insertAfter("#mark");
+          } else if (key == 56) {
+            $("#mark").after("<p>after</p>");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="mark">mark</div>
+  </body>
+</html>

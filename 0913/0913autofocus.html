@@ -25,9 +25,37 @@
             }
           }
         });
-        
+
       });
+
+      $(function () {
+        $('#box').hover(() => {
+          $('span').toggleClass('true');
+        })
+
+        $('#box').click(() => {
+          $('#box').addClass('click');
+        })
+
+        $('#box').dblclick(() => {
+          $('#box').removeClass('click');
+        })
+      })
     </script>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      #box.click {
+        background-color: blue;
+        border-radius: 50%;
+      }
+      .true{
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <div id="jumin_number">
@@ -39,5 +67,10 @@
       <input type="radio" name="gender" id="male" value="m">남성</input>
       <input type="radio" name="gender" id="female" value="f">여성</input>
     </div>
+
+    <div id="box"></div>
+    <p>마우스가 올라갔나요?</p>
+    <span>예</span>
+    <span class="true">아니오</span>
   </body>
 </html>

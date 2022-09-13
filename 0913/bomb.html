@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+      #explosive {
+        display: none;
+      }
+      #password2 {
+        display: none;
+      }
+      #btnStop {
+        display: none;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("#start").click(function () {
+          let sec = $("#time").val();
+          let password = $("#password").val();
+
+          if (!password) {
+            alert("비밀번호를 입력해주세요.");
+            return;
+          } else if (!sec) {
+            alert("시간을 입력해주세요.");
+            return;
+          } else {
+            alert("폭탄이 설치되었습니다.");
+            $("#bomb").show();
+            $("#start").hide();
+            $("#time").hide();
+            $("#password").hide();
+
+            let timer = setInterval(function () {
+              $("#timer").text(sec);
+              sec--;
+              $("#password2").show();
+              $("#btnStop").show();
+              $("#btnStop").click(function () {
+                if (password == $("#password2").val()) {
+                  alert("폭탄이 해체되었습니다.");
+                  clearInterval(timer);
+                } else {
+                  alert("비밀번호가 틀렸습니다.");
+                  $("#explosive").show();
+                  clearInterval(timer);
+                }
+              });
+              if (sec < 0) {
+                $("#explosive").show();
+                alert("폭파!");
+                clearInterval(timer);
+              }
+            }, 1000);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="timer">
+      <p>폭탄 세팅</p>
+      <img
+        id="bomb"
+        src="data:image/jpeg;base64,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"
+      />
+      <br />
+      <input type="number" id="time" placeholder="시간을 입력하세요." />
+      <br />
+      <input
+        type="password"
+        id="password"
+        placeholder="비밀번호를 입력하세요."
+      />
+      <br />
+      <button id="start">시작</button>
+    </div>
+    <div id="explosive">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAwghECH48W_1GGERaZAMq0vGi6G21BJ1OLgHoAaY&s"
+      />
+    </div>
+    <input
+      type="password"
+      id="password2"
+      placeholder="비밀번호를 입력하세요."
+    />
+    <button id="btnStop">입력</button>
+  </body>
+</html>
