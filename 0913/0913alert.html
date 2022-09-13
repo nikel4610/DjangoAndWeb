@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let link = document.querySelector("button");
+        link.onclick = function () {
+          let name = document.querySelector("#name").value;
+          if (name == "") {
+            alert("이름을 입력하세요");
+            return false;
+          }
+          alert("이름은 " + name + "입니다");
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="what is your name?" />
+    <button>이름</button>
+  </body>
+</html>
