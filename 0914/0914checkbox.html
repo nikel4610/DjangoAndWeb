@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+      section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(".allteam").change(function () {
+          if ($(".allteam").prop("checked")) {
+            $(".team1").prop("checked", true);
+            $(".team2").prop("checked", true);
+            $(".team1check").prop("checked", true);
+            $(".team2check").prop("checked", true);
+          } else {
+            $(".team1").prop("checked", false);
+            $(".team2").prop("checked", false);
+            $(".team1check").prop("checked", false);
+            $(".team2check").prop("checked", false);
+          }
+        });
+
+        $(".team1").change(function () {
+          if ($(".team1").prop("checked")) {
+            $(".team1check").prop("checked", true);
+          } else {
+            $(".team1check").prop("checked", false);
+          }
+
+          if ($(".team1").prop("checked") && $(".team2").prop("checked")) {
+            $(".allteam").prop("checked", true);
+          } else {
+            $(".allteam").prop("checked", false);
+          }
+        });
+
+        $(".team2").change(function () {
+          if ($(".team2").prop("checked")) {
+            $(".team2check").prop("checked", true);
+          } else {
+            $(".team2check").prop("checked", false);
+          }
+
+          if ($(".team1").prop("checked") && $(".team2").prop("checked")) {
+            $(".allteam").prop("checked", true);
+          } else {
+            $(".allteam").prop("checked", false);
+          }
+        });
+
+        $(".team1check").change(function () {
+          if ($(".team1check:checked").length == $(".team1check").length) {
+            $(".team1").prop("checked", true);
+          } else {
+            $(".team1").prop("checked", false);
+          }
+
+          if (
+            $(".team1check:checked").length == $(".team2check:checked").length
+          ) {
+            $(".allteam").prop("checked", true);
+          } else {
+            $(".allteam").prop("checked", false);
+          }
+        });
+
+        $(".team2check").change(function () {
+          if ($(".team2check:checked").length == $(".team2check").length) {
+            $(".team2").prop("checked", true);
+          } else {
+            $(".team2").prop("checked", false);
+          }
+
+          if (
+            $(".team1check:checked").length == $(".team2check:checked").length
+          ) {
+            $(".allteam").prop("checked", true);
+          } else {
+            $(".allteam").prop("checked", false);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section>
+      <div>
+        <input type="checkbox" class="allteam" />전체선택
+        <input type="checkbox" class="team1" />팀1
+        <input type="checkbox" class="team2" />팀2
+        <hr />
+        <input type="checkbox" class="team1check" id="team" />팀1
+        <input type="checkbox" class="team2check" id="team" />팀2
+        <input type="checkbox" class="team1check" id="team" />팀1
+        <input type="checkbox" class="team2check" id="team" />팀2
+        <br />
+        <input type="checkbox" class="team1check" id="team" />팀1
+        <input type="checkbox" class="team1check" id="team" />팀1
+        <input type="checkbox" class="team2check" id="team" />팀2
+        <input type="checkbox" class="team2check" id="team" />팀2
+      </div>
+    </section>
+  </body>
+</html>
