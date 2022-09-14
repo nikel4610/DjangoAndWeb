@@ -5,18 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #msg {
+        color: black;
+      }
+      #msg.beep {
+        color: red;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      let regFunction = function (value, regMethod) {
+        let regExp = {
+          koreanName: /^[가-힣]{2,4}$/,
+          englishName: /^[a-zA-Z]{2,10}$/,
+          phoneNumbeer: /^\d{3}-\d{3,4}-\d{4}$/,
+        };
+
+        if (!value) {
+          alert("아이디를 입력해주세요.");
+          $("#name").focus();
+          return false;
+        } else if (value.replace(/ /g, "").length == 0) {
+          return false;
+        } else if (!regExp[regMethod].test(value)) {
+          return false;
+        }
+      };
+
+      $(function () {
+        $("form").submit(function (e) {
+          let name = $("#name").val();
+          if (regFunction(name, "koreanName") == false) {
+            $("#msg").text("사용 불가");
+            $("#msg").addClass("beep");
+            e.preventDefault();
+          } else {
+            $("#msg").text("사용 가능");
+            $("#msg").removeClass("beep");
+            e.preventDefault();
+          }
+        });
+      });
+    </script>
   </head>
   <body>
-    <div>
-      이름
+    <form action="/login" method="post">
+      <label>이름</label>
       <input
         type="text"
         name="name"
         id="name"
-        placeholder="이름을 입력하세요"
-      />
-      <button>제출</button>
-    </div>
+        placeholder="이름을 입력하세요."
+      /><span id="msg"></span>
+      <br />
+      <input type="submit" />
+    </form>
   </body>
 </html>
