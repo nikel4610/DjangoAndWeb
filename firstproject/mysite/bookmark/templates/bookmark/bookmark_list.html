@@ -11,7 +11,7 @@
       <h1>북마크 리스트</h1>
       <ul>
         {% for bm in object_list %}
-        <li><a href="{% url 'detail' bm.id %}">{{ bm }}</a></li>
+        <li><a href="{% url 'bookmark:detail' bm.id %}">{{ bm }}</a></li>
         {% endfor %}
       </ul>
     </div>
