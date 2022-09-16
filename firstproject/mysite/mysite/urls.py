@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from bookmark.views import BookmarkLV, BookmarkDV
 
 from django.views.generic import ListView, DetailView
@@ -22,8 +22,9 @@ from bookmark.models import Bookmark
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bookmark/', BookmarkLV.as_view(), name='index'),
-    path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
+    # path('bookmark/', BookmarkLV.as_view(), name='index'),
+    # path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
+    path('bookmark/', include('bookmark.urls')),
 
     # path('bookmark/', ListView.as_view(model=Bookmark), name='index'),
     # path('bookmark/<int:pk>/', DetailView.as_view(model=Bookmark), name='detail'),
