@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>{{ post.title }}</h2>
+
+    <p class="other_posts">
+        {% if post.get_previous %}
+        <a href="{{ post.get_previous.get_absolute_url }}" title="View previouspost">
+            &laquo;--{{post.get_previous}}</a>
+        {% endif %}
+
+        {% if post.get_next %}
+        | <a href="{{ post.get_next.get_absolute_url }}"
+            title="View next post">{{ post.get_next }}--&raquo;</a>
+        {% endif %}
+    </p>
+
+    <p class="date">{{ post.modify_date|date:"j F Y"}}</p>
+    <br />
+
+    <div class="body">
+        {{ post.content|linebreaks }}
+    </div>
+
+    <div>
+        <a href="/blog/archive">아카이브로 보기</a>
+    </div>
+    
+</body>
+
+</html>
