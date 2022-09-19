@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookmark List</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}bookmark_detail.html{% endblock %}
+
+{% block content %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/bookmark_list.css' %}">
+{% endblock %}
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
     <div id="content">
-      <h1>{{ object.title }}</h1>
-      <ul>
-        <li>URL : <a href="{{ object.url }}" target="_blank">{{ object.url }}</li>
-      </ul>
+      <h1 class="section-heading mb-4">{{ object.title }}</h1>
+        <a href="{{ object.url }}" target="_blank" >{{ object.url }}</a>
     </div>
-  </body>
-</html>
+  </div>
+
+{% endblock %}

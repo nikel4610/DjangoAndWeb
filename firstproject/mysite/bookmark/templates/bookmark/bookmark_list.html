@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookmark List</title>
-  </head>
-  <body>
-    <div id="content">
-      <h1>북마크 리스트</h1>
-      <ul>
-        {% for bm in object_list %}
-        <li><a href="{% url 'bookmark:detail' bm.id %}">{{ bm }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </body>
-</html>
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}bookmark_list.html{% endblock %}
+
+{% block content %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/bookmark_list.css' %}">
+{% endblock %}
+
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <h2 class="section-heading mb-4">
+    <span class="section-heading-upper mb-3">Bookmark</span>
+    <span class="section-heading-upper3 mb-3">List</span>
+  </h2>
+</div>
+<div>
+  <div class="bookmarkbox cta-inner text-center">
+    {% for bm in object_list %}
+      <a class="bookmarksul" href="{% url 'bookmark:detail' bm.id %}">{{ bm }}
+        <br>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
