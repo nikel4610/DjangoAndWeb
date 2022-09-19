@@ -1,21 +1,27 @@
 body {
-    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url(../img/fff.png);
+    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url(../img/22.png);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
   }
   
     .site-heading-upper {
-      padding: 200px 0 50px;
       text-align: center;
-      font-family: 'Times New Roman', Times, serif;
-      color:rgb(255, 47, 47)
+      font-family: 'open sans', sans-serif;
+      color:rgb(0, 0, 0);
+      font-size: 100px;
     }
-    .site-heading-lower {
-      padding: 0 0 50px;
+    .site-heading-upper2 {
+      padding: 0px 0 50px;
       text-align: center;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color:rgb(41, 55, 255)
+      font-family: 'open sans', sans-serif;
+      color:rgb(255, 255, 255);
+    }
+    .site-heading-lower2 {
+      padding: 0px 0 50px;
+      text-align: center;
+      font-family: 'open sans', sans-serif;
+      color:rgb(255, 255, 255);
     }
     .home-image { 
       background-repeat: no-repeat;
@@ -25,23 +31,52 @@ body {
       padding: 20px 0 0 20px;
     }
     .intro-text {
-      color:aliceblue
+      color:aliceblue;
     }
     .intro-img {
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
+      padding: auto;
+      margin: auto;
+      display: block
     }
     .title {
-      color: rgb(111, 126, 255);
+      color:rgb(2, 240, 139);
       font-weight: bold;
       font-size: 100px;
       font-family: 'Times New Roman', Times, serif;
     }
     .section-heading {
       text-transform: uppercase;
-      font-size: 150px
+      font-size: 150px;
     }
     .section-bottom {
+      font-size: 40px;
+    }
+    .section-bottom2 {
       padding: 50px 0;
-      font-size: 80px
+      font-size: 10px;
+      color: aliceblue;
+    }
+    .square-section {
+      background-color: rgba(6, 170, 105, 0.904);
+    }
+    .sectiontext {
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      font-family: 'Times New Roman', Times, serif;
+      padding-bottom: 10px;
+    }
+    .bttext {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      font-size: 20px;
+      color:aliceblue
+    }
+    .section-heading-upper{
+      font-size: 100px;
+    }
+    .section-heading-upper3{
+      font-size: 100px;
+      color:rgb(2, 240, 139);
     }
