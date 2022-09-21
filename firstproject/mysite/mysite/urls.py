@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mysite.views import HomeView
+from mysite import views
+from mysite.views import *
 from bookmark.views import BookmarkLV, BookmarkDV
 
 from django.views.generic import ListView, DetailView
@@ -36,6 +37,10 @@ urlpatterns = [
 
     # path('bookmark/', ListView.as_view(model=Bookmark), name='index'),
     # path('bookmark/<int:pk>/', DetailView.as_view(model=Bookmark), name='detail'),
+
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', views.UserCreateView.as_view(), name='register'),
+    path('accounts/register/done/', views.UserCreateDoneTV.as_view(), name='register_done'),
 ] 
 
 if settings.DEBUG:

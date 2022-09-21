@@ -81,6 +81,32 @@
             </div>
           </li>
         </ul>
+        <form>
+          <!-- 회원(로그인/로그아웃/회원가입/비밀번호 변경) Start -->
+          <ul class="navbar-nav mx-5">
+            <li class="nav-item dropdown mx-1 btn">
+                {% if user.is_active %} <!-- 로그인된 상태라면 -->
+                <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                    <i class="fas fa-user"></i>&ensp;{% firstof user.get_short_name user.get_username %}&ensp;
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                    <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+                </div>
+                {% else %} <!-- 로그인 안된 상태라면 -->
+                <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                    Login / Register
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                </div>
+                {% endif %}
+            </li>
+        </ul>
+        <!-- 회원(로그인/로그아웃/회원가입/비밀번호 변경) End -->
+    </div>
+        </form>
       </div>
     </nav>
 
