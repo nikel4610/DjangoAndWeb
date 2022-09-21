@@ -21,6 +21,9 @@ from bookmark.views import BookmarkLV, BookmarkDV
 from django.views.generic import ListView, DetailView
 from bookmark.models import Bookmark
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('bookmark/', BookmarkLV.as_view(), name='index'),
@@ -29,7 +32,11 @@ urlpatterns = [
     path('', HomeView.as_view(),  name='home'),
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
+    path('photo/', include('photo.urls')),
 
     # path('bookmark/', ListView.as_view(model=Bookmark), name='index'),
     # path('bookmark/<int:pk>/', DetailView.as_view(model=Bookmark), name='detail'),
-]
+] 
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
