@@ -1,13 +1,22 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 {% endblock %}
 
 {% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/photo_detail.css' %}">
 {% endblock %}
 
 {% block content %}
+
+{% for photo in object.photo_set.all %}
+    <div>    
+        <img class="img" src="{{ photo.image.url }}" alt="{{ photo }}">
+    </div>
+{% endfor %}
+      
 {% endblock %}
 
 {% block extra-script %}
 {% endblock %}
+

@@ -18,12 +18,10 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
                     <h5>
-                        <span class="name display-4">ALBUM: {{ object }}<br></span>
+                        <a class="name display-4" href="{% url 'photo:album_detail' object.id %}">ALBUM: {{ object }}</a>
                         <p class="description">{{ object.description }}<br></p>
                     </h5>
-                </div>
             </div>
             <div class="col-lg-6 order-lg-2">
                 <div class="p-5">
