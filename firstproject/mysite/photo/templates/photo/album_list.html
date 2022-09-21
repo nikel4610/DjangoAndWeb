@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/photo_list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">
+        <span class="photo-title">PHOTO  </span>
+        <span class="photo-title2">LIST</span>
+    </h1>
+    
+    {% for object in object_list %}
+<div class="card">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h5>
+                        <span class="name display-4">ALBUM: {{ object }}<br></span>
+                        <p class="description">{{ object.description }}<br></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    {% for photo in object.photo_set.all %}
+                    <span class="photout">{{ photo.upload_dt }}<br></span>
+                        <div>    
+                            <span class="description2">{{ photo.description }}<br></span>
+                            <span class="photosmalltitle">{{ photo }}<br></span>
+                            <div class="p-5">
+                                <img class="img-fluid rounded-circle" src="{{ photo.image.thumb_url }}" alt="{{ photo }}"><br>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block extra-script %}
+{% endblock %}
