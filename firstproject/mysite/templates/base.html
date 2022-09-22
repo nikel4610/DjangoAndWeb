@@ -90,8 +90,8 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'bookmark:add' %}">bookmark</a>
               <a class="dropdown-item" href="{% url 'blog:add' %}">Post</a>
-              <a class="dropdown-item" href="#">Album</a>
-              <a class="dropdown-item" href="#">Photo</a>
+              <a class="dropdown-item" href="{% url 'photo:album_add' %}">Album</a>
+              <a class="dropdown-item" href="{% url 'photo:photo_add' %}">Photo</a>
             </div>
           </li>
           <li class="nav-item dropdown active">
@@ -104,8 +104,8 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'bookmark:change' %}">bookmark</a>
               <a class="dropdown-item" href="{% url 'blog:change' %}">Post</a>
-              <a class="dropdown-item" href="#">Album</a>
-              <a class="dropdown-item" href="#">Photo</a>
+              <a class="dropdown-item" href="{% url 'photo:album_change' %}">Album</a>
+              <a class="dropdown-item" href="{% url 'photo:photo_change' %}">Photo</a>
             </div>
           </li>
           
