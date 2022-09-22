@@ -34,12 +34,17 @@
       width: 100%;
       padding: 60px;
     }
+    nav {
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 3px 15px 8px rgba(0,0,0,0.3);
+      background-color: rgba(255, 255, 192, 0.068);
+    }
     </style>
     {% block extra-style %} {% endblock %}
   </head>
 
   <body style="padding: top 90px">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <a class="navbar-brand mx-5 mb-0 font-weight-bold font-italic text-white" href="{% url 'home' %}">
         SpaceTravel
       </a>
@@ -54,19 +59,16 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-white" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
+          <li class="nav-item active p-xl-3">
             <a class="nav-link text-white" href="{% url 'bookmark:index' %}">Bookmark<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item active p-xl-3">
             <a class="nav-link text-white" href="{% url 'blog:index' %}">Blog<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item active p-xl-3">
             <a class="nav-link text-white" href="{% url 'photo:index' %}">Photo<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown active p-xl-3">
             <a
               class="nav-link dropdown-toggle text-white"
               href="#"
@@ -80,7 +82,7 @@
               <a class="dropdown-item" href="{% url 'blog:search' %}">Search</a>
             </div>
           </li>
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown active p-xl-3">
             <a
               class="nav-link dropdown-toggle text-white"
               href="#"
@@ -94,7 +96,7 @@
               <a class="dropdown-item" href="{% url 'photo:photo_add' %}">Photo</a>
             </div>
           </li>
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown active p-xl-3">
             <a
               class="nav-link dropdown-toggle text-white"
               href="#"
@@ -108,7 +110,6 @@
               <a class="dropdown-item" href="{% url 'photo:photo_change' %}">Photo</a>
             </div>
           </li>
-          
         </ul>
         <form>
           <!-- 회원(로그인/로그아웃/회원가입/비밀번호 변경) Start -->

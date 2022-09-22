@@ -15,12 +15,14 @@
   </h2>
 </div>
 <div>
-  <div class="bookmarkbox cta-inner text-center">
     {% for bm in object_list %}
       <a class="bookmarksul" href="{% url 'bookmark:detail' bm.id %}">{{ bm }}
         <br>
       </a>
     {% endfor %}
-  </div>
+    {% if user.is_active %}
+      <a class="btn btn-outline-light" style="float: right" href="{% url 'bookmark:change' %}">change</a>
+      <a class="btn btn-outline-light" style="float: right" href="{% url 'bookmark:add' %}">add</a>
+    {% endif %}
 </div>
 {% endblock %}

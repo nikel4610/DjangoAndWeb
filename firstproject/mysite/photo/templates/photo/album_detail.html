@@ -9,12 +9,12 @@
 
 {% block content %}
 
+<br>
+<br>
 {% for photo in object.photo_set.all %}
-    <div>    
-        <img class="img" src="{{ photo.image.url }}" alt="{{ photo }}">
-    </div>
+    <img class="img" src="{{ photo.image.url }}" alt="{{ photo }}">
 {% endfor %}
-      
+            
 {% endblock %}
 
 {% block extra-script %}
