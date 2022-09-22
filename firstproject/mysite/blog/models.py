@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from taggit.managers import TaggableManager
+from django.contrib.auth.models import User
+from django.utils.text import slugify
 # Create your models here.
 
 class Post(models.Model):
@@ -11,6 +13,11 @@ class Post(models.Model):
     create_dt = models.DateTimeField('CREATE DATE', auto_now_add=True)
     modify_dt = models.DateTimeField('MODIFY DATE', auto_now=True)
     tags = TaggableManager(blank=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='OWNER', blank=True, null=True)
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title, allow_unicode=True)
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'post'
