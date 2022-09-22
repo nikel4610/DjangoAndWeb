@@ -80,6 +80,35 @@
               <a class="dropdown-item" href="{% url 'blog:search' %}">Search</a>
             </div>
           </li>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              data-toggle="dropdown"
+              >Add Option<span class="sr-only">(current)</span></a
+            >
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'bookmark:add' %}">bookmark</a>
+              <a class="dropdown-item" href="{% url 'blog:add' %}">Post</a>
+              <a class="dropdown-item" href="#">Album</a>
+              <a class="dropdown-item" href="#">Photo</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              data-toggle="dropdown"
+              >Change Option<span class="sr-only">(current)</span></a
+            >
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'bookmark:change' %}">bookmark</a>
+              <a class="dropdown-item" href="{% url 'blog:change' %}">Post</a>
+              <a class="dropdown-item" href="#">Album</a>
+              <a class="dropdown-item" href="#">Photo</a>
+            </div>
+          </li>
+          
         </ul>
         <form>
           <!-- 회원(로그인/로그아웃/회원가입/비밀번호 변경) Start -->
