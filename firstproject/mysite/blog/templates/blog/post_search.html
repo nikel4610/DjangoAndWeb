@@ -26,30 +26,35 @@
             Search
           </button>
         </form>
-  </div>
-  <div class="result">
-    {% if object_list %}
-      {% for post in object_list %}
-          <h2 class="resulttxt">
-            <a href='{{ post.get_absolute_url }}'>
-              {{ post.title }}
-            </a>
-          </h2>
-          <div class="resulttxt2">
-            {{ post.modify_dt|date:"N d, Y" }}
-            <p>{{ post.description }}</p>
-          </div>
-          <hr class="hrtxt">
-      {% endfor %}
-
-    {% elif search_term %}
-    <br>
-    <h2 class="resulttxt">
-      No results found for {{ search_term }}
-    </h2>
-    {% endif %}
-  </div>
+    </div>
 </div>
+  
+    <div class="container txtct">
+      {% if object_list %}
+        {% for post in object_list %}
+            <h2 class="resulttxt">
+              <a href='{{ post.get_absolute_url }}'>
+                {{ post.title }}
+              </a>
+            </h2>
+            <h4 class="resulttxt2">
+              {{ post.modify_dt|date:"N d, Y" }}
+              <p>{{ post.content }}</p>
+            </h4>
+            <hr class="hrtxt">
+        {% endfor %}
+      </div>
+
+      {% elif search_term %}
+      <br>
+      <h2 class="noresult">
+        No results found for {{ search_term }}
+      </h2>
+      {% endif %}
+</div>
+  
+ 
+
         
 {% endblock %}
 

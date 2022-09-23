@@ -26,11 +26,16 @@ body {
     text-overflow: ellipsis;
   }
 
+  .txtct {
+    width: 800px
+  }
+
   .resulttxt2 {
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Lobster', cursive;
     text-align: center;
+    margin: 50px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,4 +46,12 @@ body {
     border-color: white;
     padding-top: 30px;
     border-style: dashed
+  }
+
+  .noresult {
+    color: white;
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin: 50px;
   }
