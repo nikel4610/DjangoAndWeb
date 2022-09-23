@@ -63,7 +63,7 @@
             <a class="nav-link text-white" href="{% url 'bookmark:index' %}">Bookmark<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active p-xl-3">
-            <a class="nav-link text-white" href="{% url 'blog:index' %}">Blog<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" href="{% url 'blog:index' %}">News<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active p-xl-3">
             <a class="nav-link text-white" href="{% url 'photo:index' %}">Photo<span class="sr-only">(current)</span></a>
@@ -78,11 +78,10 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
               <a class="dropdown-item" href="{% url 'blog:post_archive' %}">Archive</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'blog:search' %}">Search</a>
+              <a class="dropdown-item" href="{% url 'blog:search' %}">Archive Search</a>
             </div>
           </li>
-          <li class="nav-item dropdown active p-xl-3">
+          <!-- <li class="nav-item dropdown active p-xl-3">
             <a
               class="nav-link dropdown-toggle text-white"
               href="#"
@@ -95,8 +94,8 @@
               <a class="dropdown-item" href="{% url 'photo:album_add' %}">Album</a>
               <a class="dropdown-item" href="{% url 'photo:photo_add' %}">Photo</a>
             </div>
-          </li>
-          <li class="nav-item dropdown active p-xl-3">
+          </li> -->
+          <!-- <li class="nav-item dropdown active p-xl-3">
             <a
               class="nav-link dropdown-toggle text-white"
               href="#"
@@ -109,8 +108,9 @@
               <a class="dropdown-item" href="{% url 'photo:album_change' %}">Album</a>
               <a class="dropdown-item" href="{% url 'photo:photo_change' %}">Photo</a>
             </div>
-          </li>
+          </li> -->
         </ul>
+      
         <form>
           <!-- 회원(로그인/로그아웃/회원가입/비밀번호 변경) Start -->
           <ul class="navbar-nav mx-5">
@@ -141,7 +141,9 @@
     </nav>
 
     <div id='content' class="container-fliud">
-      {% block content %} {% endblock %}
+      {% block content %} 
+
+      {% endblock %}
     </div>
 
     <footer class="bg-info">

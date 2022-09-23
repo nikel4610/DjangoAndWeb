@@ -2,16 +2,21 @@
 {% load static %}
 {% block title %}bookmark_detail.html{% endblock %}
 
-{% block content %}
-
 {% block extra-style %}
 <link rel="stylesheet" href="{% static 'css/bookmark_list.css' %}">
 {% endblock %}
-<div class="intro-text left-0 text-center bg-faded p-5 rounded">
-    <div id="content">
-      <h1 class="section-heading mb-4">{{ object.title }}</h1>
-        <a href="{{ object.url }}" target="_blank" >{{ object.url }}</a>
-    </div>
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+      <div id="content">
+        <h1 class="objtitle section-heading mb-4">{{ object.title }}</h1>
+          <a class="address" href="{{ object.url }}" target="_blank" >{{ object.url }}</a>
+      </div>
   </div>
+</div>
 
 {% endblock %}

@@ -6,6 +6,22 @@ body {
   }
 
 .bookmarksul {
-    font-size: 70px;
+    font-size: 30px;
     color: rgb(255, 255, 255);
+}
+
+.container {
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 3px 15px 8px rgba(0,0,0,0.3);
+  background-color: rgba(255, 255, 192, 0.068);
+  padding: 60px;
+}
+
+.objtitle {
+  color:rgb(40, 167, 69);
+}
+
+.address {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
 }
