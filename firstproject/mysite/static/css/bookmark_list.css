@@ -4,24 +4,59 @@ body {
     background-position: center;
     background-size: cover;
   }
+  
 
 .bookmarksul {
     font-size: 30px;
     color: rgb(255, 255, 255);
+    margin-top: 25px;
+    font-family: 'Malgun Gothic', sans-serif;
 }
 
 .container {
   backdrop-filter: blur(10px);
   box-shadow: 2px 3px 15px 8px rgba(0,0,0,0.3);
   background-color: rgba(255, 255, 192, 0.068);
-  padding: 60px;
+  height: 100px;
+  width: 400px;
+  margin-top: 20px;
 }
 
-.objtitle {
-  color:rgb(40, 167, 69);
+.container:hover {
+  transform:scale3d(1.1,1.1,1.1);
+  transition:0.6s;
 }
 
-.address {
-  font-size: 50px;
+.box {
+  text-align: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.all {
+  margin-top: 100px;
+}
+
+.form-group {
+  color:aliceblue;
+  margin-left: 300px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bmformtitle {
+  font-size:80px;
   color: rgb(255, 255, 255);
+}
+
+.name {
+  font-size: 80px;
+  color: rgb(40, 167, 69);
+}
+
+.formdes {
+  color: rgb(40, 167, 69);
+  font-size: 30px;
 }

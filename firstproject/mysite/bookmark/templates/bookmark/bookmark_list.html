@@ -10,24 +10,21 @@
 
 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
   <h2 class="section-heading mb-4">
-    <span class="section-heading-upper mb-3">Bookmark</span>
+    <span class="section-heading-upper mb-3">Bookmark  </span>
     <span class="section-heading-upper3 mb-3">List</span>
+    
   </h2>
-</div>
-
-<div class="container text-center">
-  <div class="background">
-  {% for bm in object_list %}
-    <a class="bookmarksul" href="{% url 'bookmark:detail' bm.id %}">{{ bm }}
-      <br>
-    </a>
-  {% endfor %}
 
   {% if user.is_active %}
-    <a class="btn btn-outline-light" style="float: right" href="{% url 'bookmark:change' %}">change</a>
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'bookmark:change' %}">Edit</a>
     <a class="btn btn-outline-light" style="float: right" href="{% url 'bookmark:add' %}">add</a>
   {% endif %}
 
-  </div>
+  
 </div>
+{% for bm in object_list %}
+<a class="container d-flex justify-content-center" href="{% url 'bookmark:detail' bm.id %}">
+  <p class="bookmarksul">{{ bm }}</p>
+</a>
+{% endfor %}
 {% endblock %}

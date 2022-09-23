@@ -1,5 +1,6 @@
-"{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load widget_tweaks %}
+{% load static %}
 
 <!-- 제목 블록 Start (기본값 My Blog Page) -->
 {% block title %}
@@ -9,14 +10,20 @@ My Blog Bookmark Change List Page
 
 <!-- 스타일 블록 Start -->
 {% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/bookmark_list.css' %}">
 {% endblock %}
 <!-- 스타일 블록 End -->
 
 <!-- 콘텐츠 블록 Start -->
 {% block content %}
 <br>
-    <h1>Bookmark Change - {{ user }}</h1>
-    <br>
+<br>
+<div class="all">
+    <div class="box">
+    <span class="bmformtitle">Bookmark Update/Delete - </span>
+    <span class="name">{{ user }}</span>
+    <p class="formdes font-italic">Update or Delete Bookmark</p>
+    </div>
 
     <table class="table table-bordered table-condensed table-striped"">
         <thead>
@@ -41,6 +48,7 @@ My Blog Bookmark Change List Page
             {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 

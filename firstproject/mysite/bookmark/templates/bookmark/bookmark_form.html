@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
+{% load static %}
 
 <!-- 제목 블록 Start (기본값 My Blog Page) -->
 {% block title %}
@@ -9,6 +10,7 @@ My Blog Bookmark Form Page Page
 
 <!-- 스타일 블록 Start -->
 {% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/bookmark_list.css' %}">
 {% endblock %}
 <!-- 스타일 블록 End -->
 
@@ -16,38 +18,41 @@ My Blog Bookmark Form Page Page
 {% block content %}
 <br>
 <br>
-    <h1>Bookmark Create/Update - {{ user }}</h1>
-    <p class="font-italic">북마크를 생성하거나 수정을 할 수 있습니다.</p>
-    
+<div class="all">
+    <div class="box">
+    <span class="bmformtitle">Bookmark Create/Update - </span>
+    <span class="name">{{ user }}</span>
+    <p class="formdes font-italic">Create or Change Bookmark</p>
+    </div>
     {% if form.errors %}
     <div class="alert alert-danger">
         <div class="font-weight-bold">Wrong! Please correct the error(s) below.</div>
         {{ form.errors }}
     </div>
     {% endif %}
-    
+
     <form method="post" class="card pt-3"> {% csrf_token %}
-    
         <div class="form-group row">
             {{ form.title|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
             <div class="col-sm-5">
                 {{ form.title|add_class:"form-control"|attr:"autofocus" }}
             </div>
         </div>
-    
+
         <div class="form-group row">
             {{ form.url|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
             <div class="col-sm-5">
                 {{ form.url|add_class:"form-control" }}
             </div>
         </div>
-    
+
         <div class="form-group">
             <div class="offset-sm-2 col-sm-5">
                 <input type="submit" value="Submit" class="btn btn-info" />
             </div>
         </div>
     </form>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 

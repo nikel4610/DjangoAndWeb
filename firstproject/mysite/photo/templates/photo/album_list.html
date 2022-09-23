@@ -9,7 +9,7 @@
 
 {% block content %}
     <h1 class="text-center">
-        <span class="photo-title">PHOTO  </span>
+        <span class="photo-title">ALBUM  </span>
         <span class="photo-title2">LIST</span>
     </h1>
     
@@ -41,6 +41,11 @@
     </div>
 </div>
     {% endfor %}
+
+    {% if user.is_active %}
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:album_change' %}">change</a>
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:album_add' %}">add</a>
+  {% endif %}
 
 {% endblock %}
 

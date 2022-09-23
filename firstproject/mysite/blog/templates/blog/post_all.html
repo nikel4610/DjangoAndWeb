@@ -28,4 +28,10 @@
         {% endif %}
     </span>
 </div>
+
+{% if user.is_active %}
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:change' %}">change</a>
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:add' %}">add</a>
+  {% endif %}
+
 {% endblock %}
