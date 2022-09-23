@@ -9,37 +9,48 @@
 
 {% block content %}
 <br>
-    <span class="title">Search </span>
-    <span class="title2">Archive</span>
-    <form class="form-inline my-2" action="." method="post"> {% csrf_token %}
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="search"
-          name="search_word"
-        />
-        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">
-          Search
-        </button>
-      </form>
-      <div class="background">
-        <div class="result">
-        {% if object_list %}
-          {% for post in object_list %}
-              <h2>
-                <a href='{{ post.get_absolute_url }}'>
-                  {{ post.title }}
-                </a>
-              </h2>
-              {{ post.modify_dt|date:"N d, Y" }}
-              <p>{{ post.description }}</p>
-          {% endfor %}
+<br>
+<br>
+<div class="all">
+  <div class="container">
+      <span class="title">SEARCH </span>
+      <span class="title2">ARCHIVE</span>
+      <form class="form-inline my-2" action="." method="post"> {% csrf_token %}
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="search"
+            name="search_word"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">
+            Search
+          </button>
+        </form>
+  </div>
+  <div class="result">
+    {% if object_list %}
+      {% for post in object_list %}
+          <h2 class="resulttxt">
+            <a href='{{ post.get_absolute_url }}'>
+              {{ post.title }}
+            </a>
+          </h2>
+          <div class="resulttxt2">
+            {{ post.modify_dt|date:"N d, Y" }}
+            <p>{{ post.description }}</p>
+          </div>
+          <hr class="hrtxt">
+      {% endfor %}
+
+    {% elif search_term %}
+    <br>
+    <h2 class="resulttxt">
+      No results found for {{ search_term }}
+    </h2>
+    {% endif %}
+  </div>
+</div>
         
-        {% elif search_term %}
-          {{ search_term }} not found
-        {% endif %}
-            </div>
-        </div>
 {% endblock %}
 
 {% block extra-script %}

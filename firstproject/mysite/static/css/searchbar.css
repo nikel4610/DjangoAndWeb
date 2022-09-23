@@ -15,12 +15,30 @@ body {
     color:rgb(40, 167, 69);
 
   }
-.result {
+.resulttxt {
     color: white;
     font-size: 50px;
     font-family: 'Lobster', cursive;
     text-align: center;
-    margin: 100px;
+    margin: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
+  .resulttxt2 {
+    color: white;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
+  .hrtxt {
+    width: 400px;
+    border-color: white;
+    padding-top: 30px;
+    border-style: dashed
+  }
