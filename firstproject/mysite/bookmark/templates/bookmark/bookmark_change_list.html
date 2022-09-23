@@ -20,14 +20,18 @@ My Blog Bookmark Change List Page
 <br>
 <div class="all">
     <div class="box">
-    <span class="bmformtitle">Bookmark Update/Delete - </span>
-    <span class="name">{{ user }}</span>
-    <p class="formdes font-italic">Update or Delete Bookmark</p>
+        <h2>
+            <span class="bmformtitle">BOOKMARK </span>
+            <span class="bmformtitle2">UPDATE/DELETE</span>
+            <br>
+            <span class="bmformtitle">{{ user }}</span>
+        </h2>
+            <p class="formdes font-italic">Update or Delete Bookmark</p>
     </div>
-
-    <table class="table table-bordered table-condensed table-striped"">
+<div class="mask d-flex align-items-center h-100">
+    <table class="table table-borderless">
         <thead>
-            <tr class="table-primary"">
+            <tr class="table">
                 <th>Title</th>
                 <th>Url</th>
                 <th>Owner</th>
@@ -35,10 +39,9 @@ My Blog Bookmark Change List Page
                 <th>Delete</th>
             </tr>
         </thead>
-
         <tbody>
             {% for item in object_list %}
-            <tr>
+            <tr class="tbinfo">
                 <td>{{ item.title }}</td>
                 <td>{{ item.url }}</td>
                 <td>{{ item.owner }}</td>
@@ -48,6 +51,7 @@ My Blog Bookmark Change List Page
             {% endfor %}
         </tbody>
     </table>
+    </div>
 </div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->

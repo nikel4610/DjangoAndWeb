@@ -16,13 +16,21 @@ My Blog Bookmark Delete Confirm Page
 
 <!-- 콘텐츠 블록 Start -->
 {% block content %}
-    <h1>Bookmark Delete</h1>
-    <br>
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+    <div class="all">
+    
+        <h2 class="section-heading mb-4">
+            <span class="section-heading-upper mb-3">BOOKMARK  </span>
+            <span class="section-heading-upper3 mb-3">DELETE</span>
+        </h2>
 
-    <form action="." method="post"> {% csrf_token %}
-        <p>"{{ object }}"를 진짜 삭제하시겠습니까? 이 작업은 돌이킬 수 없습니다. </p>
-        <input type="submit" value="Confirm" class="btn btn-danger btn-sm" />
-    </form>
+        <form action="." method="post"> {% csrf_token %}
+            <p class="bmformtitle"> DELETE "{{ object }}"!</p>
+            <p class="formdes">Are you Sure about that?</p>
+            <input type="submit" value="Confirm" class="btn btn-danger btn-sm" />
+        </form>
+    </div>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 

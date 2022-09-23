@@ -9,9 +9,11 @@
 {% block content %}
 
 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+  <br>
   <h2 class="section-heading mb-4">
-    <span class="section-heading-upper mb-3">Bookmark  </span>
-    <span class="section-heading-upper3 mb-3">List</span>
+    
+      <span class="section-heading-upper mb-3">Bookmark  </span>
+      <span class="section-heading-upper3 mb-3">List</span>
     
   </h2>
 
@@ -23,7 +25,7 @@
   
 </div>
 {% for bm in object_list %}
-<a class="container d-flex justify-content-center" href="{% url 'bookmark:detail' bm.id %}">
+<a class="container container1 d-flex justify-content-center" href="{% url 'bookmark:detail' bm.id %}">
   <p class="bookmarksul">{{ bm }}</p>
 </a>
 {% endfor %}

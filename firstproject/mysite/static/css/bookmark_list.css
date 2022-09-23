@@ -13,16 +13,16 @@ body {
     font-family: 'Malgun Gothic', sans-serif;
 }
 
-.container {
+.container1 {
   backdrop-filter: blur(10px);
-  box-shadow: 2px 3px 15px 8px rgba(0,0,0,0.3);
+  box-shadow: 2px 3px 15px 8px rgba(46, 54, 68, 0.03);
   background-color: rgba(255, 255, 192, 0.068);
   height: 100px;
   width: 400px;
   margin-top: 20px;
 }
 
-.container:hover {
+.container1:hover {
   transform:scale3d(1.1,1.1,1.1);
   transition:0.6s;
 }
@@ -31,9 +31,7 @@ body {
   text-align: center;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0);
-}
+
 
 .all {
   margin-top: 100px;
@@ -41,7 +39,6 @@ body {
 
 .form-group {
   color:aliceblue;
-  margin-left: 300px;
   text-align: center;
   margin-top: 30px;
 }
@@ -51,12 +48,37 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.name {
-  font-size: 80px;
+.bmformtitle2 {
+  font-size:80px;
   color: rgb(40, 167, 69);
 }
 
 .formdes {
   color: rgb(40, 167, 69);
   font-size: 30px;
+}
+
+.table {
+  background: rgba(206, 200, 200, 0.25);
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  margin-top: 50px;
+  max-width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.tbinfo {
+  color:rgb(255, 255, 255)
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100px;
+  color:white
 }
