@@ -25,7 +25,7 @@
   
 </div>
 {% for bm in object_list %}
-<a class="container container1 d-flex justify-content-center" href="{% url 'bookmark:detail' bm.id %}">
+<a class="container container1 d-flex justify-content-center" href="{{ bm.url }}" target="_blank">
   <p class="bookmarksul">{{ bm }}</p>
 </a>
 {% endfor %}
