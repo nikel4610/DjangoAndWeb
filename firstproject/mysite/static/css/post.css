@@ -1,0 +1,73 @@
+body {
+    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('../img/55.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+.postlist {
+    padding:10px;
+}
+
+.hor {
+    width: 400px;
+    border-color: white;
+    padding-top: 30px;
+    border-style: dashed
+}
+
+.des {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.postitle{
+    color: white;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.newstitle {
+    color: rgb(40, 167, 69);
+    margin: 50px;
+    font-size: 40px;
+}
+
+.body {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}    
+
+.archivelink {
+    text-align: center;
+}
+
+.tags {
+    text-align: center;
+}
+
+.post {
+    text-align: center;
+    color: white;
+}
+
+.container1 {
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 3px 15px 8px rgba(46, 54, 68, 0.03);
+    background-color: rgba(255, 255, 192, 0.068);
+}
+
+.container2 {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.644);
+}

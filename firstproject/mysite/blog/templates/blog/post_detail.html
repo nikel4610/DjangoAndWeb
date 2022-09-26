@@ -1,51 +1,67 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}post_detail.html{% endblock %}
 
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock %}
+
 {% block content %}
+<br>
+<div class="all">
+    <div class="container container1">
+        <h2 class="newstitle">{{ post.title }}</h2>
+            <div class="body">
+                {{ post.content|linebreaks }}
+            </div>
+    </div>
+<div class="post">
+    <p>
+        {% if post.get_previous %}
+        <a href="{{ post.get_previous.get_absolute_url }}" title="View previouspost">
+            <span class="btn btn-success btn-sm">&laquo;-- Previous</span>
+        </a>
+        {% endif %}
+    
+        {% if post.get_next %}
+        <a href="{{ post.get_next.get_absolute_url }}" title="View next post">
+            <span class="btn btn-success btn-sm">Next --&raquo;</span>
+        </a>
+        {% endif %}
+    </p>
+</div>
 
-
-<h2>{{ post.title }}</h2>
-
-<p class="other_posts">
-    {% if post.get_previous %}
-    <a href="{{ post.get_previous.get_absolute_url }}" title="View previouspost">
-        &laquo;--{{post.get_previous}}</a>
-    {% endif %}
-
-    {% if post.get_next %}
-    | <a href="{{ post.get_next.get_absolute_url }}"
-        title="View next post">{{ post.get_next }}--&raquo;</a>
-    {% endif %}
-</p>
 
 <p class="date">{{ post.modify_date|date:"j F Y"}}</p>
 <br />
 
-<div class="body">
-    {{ post.content|linebreaks }}
-</div>
-
-<div>
-    <a href="/blog/archive">아카이브로 보기</a>
+<div class="archivelink">
+    <a href="/blog/archive">
+        <span class="btn btn-outline-light">Go to Archive</span>
+    </a>
 </div>
 
 <br>
-<div>
-    <b>TAGS</b> <i class="fas fa-tag"></i>
+<div class="tags">
+    <i class="fas fa-tag"></i>
     {% load taggit_templatetags2_tags %}
     {% get_tags_for_object object as "tags" %}
     {% for tag in tags %}
-        <a href ="{% url 'blog:tagged_object_list' tag.name %}">#{{tag.name}}</a>
+    <a href ="{% url 'blog:tagged_object_list' tag.name %}">#{{tag.name}}</a>
     {% endfor %}
     &emsp;
+    <br>
+    <br>
     <a href="{% url 'blog:tag_cloud' %}"> 
         <span class = "btn btn-info btn-sm">TagCloud</span>
     </a>
-
+    <br>
+    <br>
+    <div class="container container2">
     <div id="disqus_thread"></div>
     <h1>{{ name }}</h1>
-
+</div>
+</div>
 </div>
     
 {% block extra-script %}
@@ -68,6 +84,7 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
 {% endblock %}
 
 {% endblock %}
