@@ -4,18 +4,26 @@
 {% endblock %}
 
 {% block extra-style %}
-
+<link rel="stylesheet" href="{% static 'css/img.css' %}">
 {% endblock %}
 
 {% block content %}
 <br>
 <br>
-<form method="get">
-    <label for="id_q">Search in Space:</label>
-    <input type="text" name="q" required="" id="id_q">
-    <input type="submit" value="search">
-</form>
-
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">SEARCH IN  </span>
+        <span class="photo-title2">SPACE</span>
+    </h1>
+<br>
+<div class="searchbar">
+    <form method="get">
+        <input type="text" name="q" required="" id="id_q">
+        <input type="submit" value="search" class="btn btn-outline-light btn-sm">
+    </form>
+</div>
+<br>
+<div class="container">
 <div class="row" style="text-align: center; margin-top: 30px;">
     {% for image in object_list %}
         <div class="col-md-4">
@@ -23,5 +31,7 @@
             <img class="img-thumbnail" style="max-height:200;max-width:200;" src="{{image.0}}" alt="">
         </div>
     {% endfor %}
+</div>
+</div>
 </div>
 {% endblock %}
