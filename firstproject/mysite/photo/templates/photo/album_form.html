@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
+{% load static %}
 
 <!-- 제목 블록 Start (기본값 My Blog Page) -->
 {% block title %}
@@ -9,100 +10,131 @@ My Blog Album Add Page
 
 <!-- 스타일 블록 Start -->
 {% block extra-style %}
+<style>
+  .phototitle1 {
+    font-size:80px;
+    color: rgb(255, 255, 255);
+  }
+
+  .phototitle2 {
+    font-size:80px;
+    color: rgb(40, 167, 69);
+  }
+
+  .form-group {
+    color:aliceblue;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .box {
+    text-align: center;
+  }
+
+  .form-group {
+    color:aliceblue;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .formdes {
+  color: rgb(40, 167, 69);
+  font-size: 30px;
+}
+</style>
+
+<link rel="stylesheet" href="{% static 'css/photo_detail.css' %}">
 {% endblock %}
 <!-- 스타일 블록 End -->
 
 <!-- 콘텐츠 블록 Start -->
 {% block content %}
-<h1>Album-Photo Create/Update - {{user}}</h1>
-<p class="font-italic">PhotoInlineFormSet을 이용한 추가, 수정 폼 화면입니다.</p>
+<br>
+<br>
+<div class="all">
+    <div class="box">
+        <h2>
+            <span class="phototitle1">ALBUM & PHOTO </span>
+            <span class="phototitle2">CREATE/UPDATE</span>
+            <br>
+            <span class="phototitle1">{{ user }}</span>
+        </h2>
+    <p class="formdes font-italic">Add and Update with using PhotoInlineFormSet</p>
+    </div>
 
-{% if form.errors %}
-<div class="alert alert-danger">
-    <div class="font-weight-bold">Wrong! Please correct the form error(s) below.</div>
-    {{ form.errors }}
-</div>
-{% endif %}
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <div class="font-weight-bold">Wrong! Please correct the form error(s) below.</div>
+        {{ form.errors }}
+    </div>
+    {% endif %}
 
-{% if formset.errors %}
-<div class="alert alert-warning">
-    <div class="font-weight-bold">Wrong! Please correct the formset error(s) below.</div>
-    {% for formerrors in formset.errors %}
-    {{ formerrors }}
-    {% endfor %}
-</div>
-{% endif %}
+    {% if formset.errors %}
+    <div class="alert alert-warning">
+        <div class="font-weight-bold">Wrong! Please correct the formset error(s) below.</div>
+        {% for formerrors in formset.errors %}
+        {{ formerrors }}
+        {% endfor %}
+    </div>
+    {% endif %}
 
-{% if form.is_multipart or formset.is_multipart %}
-<form enctype="multipart/form-data" action="" method="post">
-    {% else %}
-    <form action="." method="post">
-        {% endif %}
-        {% csrf_token %}
+    {% if form.is_multipart or formset.is_multipart %}
+    <form enctype="multipart/form-data" action="" method="post">
+        {% else %}
+        <form action="." method="post" class="pt-3 container">
+            {% endif %}
+            {% csrf_token %}
 
-        <h4>앨범을 추가하거나 수정하세요</h4>
+            
+                <div class="form-group row">
+                    {{ form.name|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+                    <div class="col-sm-5">
+                        {{ form.name|add_class:"form-control"|attr:"autofocus" }}
+                    </div>
+                </div>
 
-        <fieldset class="card pt-3">
+                <div class="form-group row">
+                    {{ form.description|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+                    <div class="col-sm-5">
+                        {{ form.description|add_class:"form-control" }}
+                    </div>
+                </div>
+            <br>
+            
+                {{ formset.management_form }}
+                {% for form in formset %}
+                {{ form.id }}
+                {# form.album #}
+                <div class="form-group row">
+                    {{ form.image|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+                    <div class="col-sm-5">
+                        {{ form.image|add_class:"form-control-file" }}
+                    </div>
+                </div>
 
-            <div class="form-group row">
-                {{ form.name|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
-                <div class="col-sm-5">
-                    {{ form.name|add_class:"form-control"|attr:"autofocus" }}
+                <div class="form-group row">
+                    {{ form.title|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+                    <div class="col-sm-5">
+                        {{ form.title|add_class:"form-control" }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    {{ form.description|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+                    <div class="col-sm-8">
+                        {{ form.description|add_class:"form-control"|attr:"rows:3" }}
+                    </div>
+                </div>
+
+                <hr>
+                {% endfor %}
+            <div class="form-group py-1">
+                <div class="offset-sm-0 col-sm-5">
+                    <input type="submit" value="Submit" class="btn btn-info" />
                 </div>
             </div>
-
-            <div class="form-group row">
-                {{ form.description|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
-                <div class="col-sm-5">
-                    {{ form.description|add_class:"form-control" }}
-                </div>
-            </div>
-
-        </fieldset>
-
-        <br>
-
-        <h4>사진을 추가하거나 수정하세요.</h4>
-
-        <fieldset class="card pt-3">
-
-            {{ formset.management_form }}
-            {% for form in formset %}
-            {{ form.id }}
-            {# form.album #}
-            <div class="form-group row">
-                {{ form.image|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
-                <div class="col-sm-5">
-                    {{ form.image|add_class:"form-control-file" }}
-                </div>
-            </div>
-
-            <div class="form-group row">
-                {{ form.title|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
-                <div class="col-sm-5">
-                    {{ form.title|add_class:"form-control" }}
-                </div>
-            </div>
-
-            <div class="form-group row">
-                {{ form.description|add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
-                <div class="col-sm-8">
-                    {{ form.description|add_class:"form-control"|attr:"rows:3" }}
-                </div>
-            </div>
-
-            <hr>
-            {% endfor %}
-
-        </fieldset>
-
-        <div class="form-group card py-1">
-            <div class="offset-sm-3 col-sm-5">
-                <input type="submit" value="Submit" class="btn btn-info" />
-            </div>
-        </div>
-
+        </form>
     </form>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 

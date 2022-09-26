@@ -11,9 +11,11 @@
 
 <br>
 <br>
+<div class="container">
 {% for photo in object.photo_set.all %}
     <img class="img" src="{{ photo.image.url }}" alt="{{ photo }}">
 {% endfor %}
+</div>
 
 {% if user.is_active %}
     <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:photo_change' %}">change</a>
