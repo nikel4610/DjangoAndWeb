@@ -1,0 +1,61 @@
+body {
+    background-image: linear-gradient(rgb(22, 11, 7), rgba(47, 23, 15, 0.836)), url('../img/555.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+.photo-title{
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  .photo-title2{
+    font-size: 100px;
+    color: rgb(40, 167, 69);
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .tag-cloud {
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 3px 15px 8px rgba(46, 54, 68, 0.03);
+    background-color: rgba(255, 255, 192, 0.068);
+    margin-top: 20px;
+}
+.tag-1 {font-size: 12px;}
+.tag-2 {font-size: 14px;}
+.tag-3 {font-size: 16px;}
+.tag-4 {font-size: 18px;}
+.tag-5 {font-size: 20px;}
+.tag-6 {font-size: 24px;}
+
+.tagname {
+    text-align: center;
+    color: white;
+}
+
+.postname{
+    text-align: center;
+    color: white;
+}
+
+.postdate {
+    text-align: center;
+    color: white;
+}
+
+.postcontent {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    padding: 30px;
+}
+
+.hrtxt {
+    width: 400px;
+    border-color: white;
+    padding-top: 30px;
+    border-style: dashed
+  }

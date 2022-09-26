@@ -1,20 +1,41 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}taggit_post_list.html{% endblock %}
 
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/tags.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>Posts for tag - {{ tagname }}</h1>
 <br>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">POST FOR </span>
+        <span class="photo-title2">TAGS</span>
+    </h1>
+<h1 class="tagname">#{{ tagname }}</h1>
+<br>
+<hr>
 
 {% for post in object_list %}
-<h2>
+<h2 class="postname">
     <a href='{{ post.get_absolute_url }}'>
         {{ post.title }}
     </a>
 </h2>
-{{ post.modify_dt|date:"N d, Y"}}
-<p>{{ post.description }}</p>
+<div class="postdate">
+    {{ post.modify_dt|date:"N d, Y"}}
+</div>
+<br>
+<br>
+<div class="postcontent">
+    <p>{{ post.description }}</p>
+</div>
+
+
+<hr class="hrtxt">
 
 {% endfor %}
+</div>
 {% endblock %}
