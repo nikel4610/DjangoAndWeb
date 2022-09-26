@@ -1,32 +1,35 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}post_archive_month.html{% endblock %}
 
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/archive.css' %}">
+{% endblock %}
+
 {% block content %}
+<br>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">ARCHIVE  </span>
+        <span class="photo-title2">LIST</span>
+    </h1>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Post Archives for {{ month|date:"N, Y"}}</h1>
-
-    <div>
+    <h1 class="date">
+        <span class="date">Post Archives for {{ month|date:"N, Y"}}</span>
+    </h1>
+    <br>
+    <br>
+    <div class="container">
         <ul>
             {% for post in object_list %}
-            <li>{{ post.modify_date|date:"Y-m-d"}}&nbsp;&nbsp;
-                <a href="{{ post.get_absolute_url }}"><strong>{{ post.title}}</strong></a>
+            <li class="h5">{{ post.modify_date|date:"Y-m-d"}}&nbsp;&nbsp;
+                <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong></a>
             </li>
-            {% endfor%}
+            {% endfor %}
         </ul>
     </div>
-</body>
+</div>
 
-</html>
 {% endblock %}

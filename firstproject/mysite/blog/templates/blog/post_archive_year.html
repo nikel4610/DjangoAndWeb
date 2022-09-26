@@ -1,42 +1,45 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}post_archive_year.html{% endblock %}
 
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/archive.css' %}">
+{% endblock %}
+
 {% block content %}
+<br>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">ARCHIVE  </span>
+        <span class="photo-title2">LIST</span>
+    </h1>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Post Archives for {{ year|date:"Y"}}</h1>
-
-    <ul>
+    <h1 class="date">
+        <span class="date">Post Archives for {{ year|date:"Y"}}</span>
+    </h1>
+    <br>
+    <br>
+    <div class="container">
         {% for date in date_list %}
-        <li style="display: inline;">
-            <a href="{% url 'blog:post_month_archive' year|date:'Y' date|date:'m' %}">{{ date|date:"b" }}</a>
-        </li>
+        <a href="{% url 'blog:post_month_archive' date|date:'Y' date|date:'b' %}"
+            class="btn btn-outline-light btn-sm mx-1">
+        {{ date|date:"F" }}</a>
         {% endfor %}
-    </ul>
     <br />
+    <br>
+    
 
-    <div>
         <ul>
             {% for post in object_list %}
-            <li>{{ post.modify_date|date:"Y-m-d"}}&nbsp;&nbsp;
+            <li class="h5">{{ post.modify_date|date:"Y-m-d"}}&nbsp;&nbsp;
                 <a href="{{ post.get_absolute_url }}"><strong> {{ post.title }}</strong></a>
             </li>
-            {% endfor%}
+            {% endfor %}
         </ul>
     </div>
-</body>
+</div>
 
-</html>
 
 {% endblock %}

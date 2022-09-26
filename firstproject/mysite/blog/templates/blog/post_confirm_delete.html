@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <!-- 제목 블록 Start (기본값 My Blog Page) -->
 {% block title %}
@@ -8,18 +9,42 @@ My Blog Post Delete Confirm Page
 
 <!-- 스타일 블록 Start -->
 {% block extra-style %}
+<style>
+    .bmformtitle {
+  font-size:80px;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+    }
+.formdes {
+  color: rgb(40, 167, 69);
+  font-size: 30px;
+}
+</style>
+
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
 {% endblock %}
 <!-- 스타일 블록 End -->
 
 <!-- 콘텐츠 블록 Start -->
 {% block content %}
-    <h1>Post Delete</h1>
-    <br>
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+    <div class="all">
+    
+        <h2 class="section-heading mb-4">
+            <span class="section-heading-upper mb-3">POST  </span>
+            <span class="section-heading-upper3 mb-3">DELETE</span>
+        </h2>
 
-    <form method="post">{% csrf_token %}
-        <p>"{{ object }}" 게시물을 진짜 지우시겠습니까? 되돌릴 수 없습니다.</p>
-        <input type="submit" value="Confirm" class="btn btn-danger btn-sm" />
-    </form>
+        <form action="." method="post"> {% csrf_token %}
+            <p class="bmformtitle"> DELETE "{{ object }}"!</p>
+            <p class="formdes">Are you Sure about that?</p>
+            <input type="submit" value="Confirm" class="btn btn-danger btn-sm" />
+        </form>
+    </div>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 
