@@ -4,28 +4,20 @@
 {% endblock %}
 
 {% block extra-style %}
-<style>
-  .img {
-    width: 250px;
-    height: 250px;
-  }
-  .img:hover {
-    width: 300px;
-    height: 300px;
-    transition: 0.5s ease-out
-  }
-</style>
 <link rel="stylesheet" href="{% static 'css/photo_detail.css' %}">
 {% endblock %}
 
 {% block content %}
-
 <br>
 <br>
 <div class="container">
-{% for photo in object.photo_set.all %}
-    <img class="img" src="{{ photo.image.url }}" alt="{{ photo }}">
-{% endfor %}
+  <div class="row">
+    {% for photo in object.photo_set.all %}
+      <a href="{{ photo.image.url }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+        <img src="{{ photo.image.url }}" class="img-fluid rounded">
+      </a>
+    {% endfor %}
+  </div>
 </div>
 
 {% if user.is_active %}
@@ -36,5 +28,11 @@
 {% endblock %}
 
 {% block extra-script %}
+<script>
+  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
+</script>
 {% endblock %}
 

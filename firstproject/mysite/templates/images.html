@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block extra-style %}
+
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<form method="get">
+    <label for="id_q">Search in Space:</label>
+    <input type="text" name="q" required="" id="id_q">
+    <input type="submit" value="search">
+</form>
+
+<div class="row" style="text-align: center; margin-top: 30px;">
+    {% for image in object_list %}
+        <div class="col-md-4">
+            <h4 style="margin-top: 30px;">{{image.1}}</h4>    
+            <img class="img-thumbnail" style="max-height:200;max-width:200;" src="{{image.0}}" alt="">
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

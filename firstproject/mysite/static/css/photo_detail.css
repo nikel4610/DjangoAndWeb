@@ -4,4 +4,7 @@ body {
     background-position: center;
     background-size: cover;
   }
-
+  
+.row {
+  margin: 15px;
+}

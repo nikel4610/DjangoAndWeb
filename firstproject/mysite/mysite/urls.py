@@ -41,6 +41,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', views.UserCreateView.as_view(), name='register'),
     path('accounts/register/done/', views.UserCreateDoneTV.as_view(), name='register_done'),
+
+    path('space', views.SpaceAPI_FV, name='space'),
 ] 
 
 if settings.DEBUG:
