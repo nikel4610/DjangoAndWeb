@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <!-- 제목 블록 Start (기본값 My Blog Page) -->
 {% block title %}
@@ -8,18 +9,28 @@
 
 <!-- 스타일 블록 Start -->
 {% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
 {% endblock %}
 <!-- 스타일 블록 End -->
 
 <!-- 콘텐츠 블록 Start -->
 {% block content %}
 <br>
-    <h1>Permission Denied (403)</h1>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">PERMISSION  </span>
+        <span class="photo-title2">DENIED (403)</span>
+    </h1>
+<p class="formdes font-italic">Lost in Space?</p>
     <br>
-    
+    <br>
+    <div class="container">
     <div class="alert alert-danger">
         <div class="font-weight-bold">{{ exception }}</div>
     </div>
+</div>
+</div>
 {% endblock %}
 <!-- 콘텐츠 블록 End -->
 

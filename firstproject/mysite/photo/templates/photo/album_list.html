@@ -17,7 +17,7 @@
     </h1>
     
     {% if user.is_active %}
-    <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:album_change' %}">change</a>
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:album_change' %}">Edit</a>
     <a class="btn btn-outline-light" style="float: right" href="{% url 'photo:album_add' %}">add</a>
   {% endif %}
 

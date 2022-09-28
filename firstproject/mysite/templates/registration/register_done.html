@@ -6,16 +6,23 @@ register_done.html
 {% endblock %}
 
 {% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
 {% block content %}
 <br>
 <br>
-<h1>Registeration Completed Successfully</h1>
-<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">REGISTERATION  </span>
+        <span class="photo-title2">SUCCESS</span>
+    </h1>
+<p class="formdes font-italic">Thank you for registering</p>
 
-<p>Thank you for registering</p>
-<p class="font-italic"><a href="{% url 'login' %}">Log in</a></p>
+<div class="offset-sm-6 col-sm-3">
+    <a class="btn btn-info btn-light" href="{% url 'login' %}">Log in</a>
+</div>
+</div>
 {% endblock %}
 
 {% block extra-script %}

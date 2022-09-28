@@ -18,6 +18,10 @@
             
             </h2>
 
+            {% if user.is_active %}
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:change' %}">Edit</a>
+    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:add' %}">add</a>
+  {% endif %}
 {% for post in posts %}
 <div class="postlist">
 <h2 class="postitle"><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
@@ -47,10 +51,7 @@
     </span>
 </div>
 
-{% if user.is_active %}
-    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:change' %}">change</a>
-    <a class="btn btn-outline-light" style="float: right" href="{% url 'blog:add' %}">add</a>
-  {% endif %}
+
 </div>
 </div>
 </div>
