@@ -15,6 +15,7 @@ class Post(models.Model):
     tags = TaggableManager(blank=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='OWNER', blank=True, null=True)
     
+    
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title, allow_unicode=True)
         super().save(*args, **kwargs)

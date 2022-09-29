@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}post.html{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <h1>글쓰기 페이지</h1>
+    <form method="POST">
+        {% csrf_token %}
+        제목<br>
+        <input type="text" name="postname"><br>
+        내용<br>
+        <textarea rows="10" cols="50" name="contents"></textarea><br>
+        <input type="file" name="mainphoto"><br>
+        <input type="submit" value="글쓰기">
+    </form>
+    </h1>
+</div>
+{% endblock %}

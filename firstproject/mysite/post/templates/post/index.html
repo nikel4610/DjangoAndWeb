@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}post.html{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div class="all">
+    <h1 class="text-center">
+        <span class="photo-title">POST  </span>
+        <span class="photo-title2">LIST</span>
+    </h1>
+    <button><a href="new_post/">write</a></button>
+    <a href="/blog/{{post.pk}}/remove">delete</a>
+</div>
+{% endblock %}
