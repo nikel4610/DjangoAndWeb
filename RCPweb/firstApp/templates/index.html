@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/des.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css/bootstrap.min.css">
 </head>
-<body>
-    <h1>테스트!</h1>
+<body style="padding-top:90px; text-align: center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>첫번째 페이지</h1>
+        <p>첫번째 페이지입니다.</p>
+      </div>
+    </div>
+
+      <h1>영수증 사진</h1>
+      <p>영수증 사진 업로드 </p>
+     
+  </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      업로드 : 
+      <input name="image" type="file">
+      <br><br>
+    <input class="btn btn-primary" type="submit" value="글 작성">
+    </form>
+  </div>
+
 </body>
 </html>
